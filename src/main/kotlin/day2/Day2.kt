@@ -1,6 +1,5 @@
-package `Day 2`
+package day2
 import java.io.File
-import kotlin.text.digitToInt as digitToInt1
 
 fun trackSubMulti(instructions: List<List<String>>) : Int {
     var horizontal = 0

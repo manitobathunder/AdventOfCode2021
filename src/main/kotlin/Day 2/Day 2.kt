@@ -2,7 +2,7 @@ package `Day 2`
 import java.io.File
 import kotlin.text.digitToInt as digitToInt1
 
-fun trackSubMult(instructions: List<List<String>>) : Int {
+fun trackSubMulti(instructions: List<List<String>>) : Int {
     var horizontal = 0
     var depth = 0
     for (instruction in instructions) {
@@ -34,7 +34,7 @@ fun trackSubAim(instructions: List<List<String>>) : Int {
 
 fun main() {
     val instructions = File("src/main/kotlin/Day 2/day2.txt").readLines().map { it.split(" ")}
-    val answer1 = trackSubMult(instructions)
+    val answer1 = trackSubMulti(instructions)
     println(answer1)
     val answer2 = trackSubAim(instructions)
     println(answer2)

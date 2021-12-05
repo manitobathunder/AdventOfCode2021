@@ -52,20 +52,13 @@ fun getEpsilonBits(gamma: String) : String {
 fun findOxygenRating(binary: List<String>) : Int {
     var i = 0
     var candidates = binary.toMutableList()
-    //println(candidates)
     while (candidates.size > 1) {
         val binaryMap = candidates.groupingBy { it.elementAt(i) }.eachCount()
-        //println("Round $i:")
-        //println(binaryMap)
         if ((binaryMap['0']!! < binaryMap['1']!!) || (binaryMap['0']!! == binaryMap['1']!!)) {
             candidates = candidates.filter { it.elementAt(i) == '1' } as MutableList<String>
-            //println("Removing candidates with 0 at index $i")
-            //println(candidates)
             i++
         } else if (binaryMap['0']!! > binaryMap['1']!!) {
             candidates = candidates.filter { it.elementAt(i) == '0'} as MutableList<String>
-            //println("Removing candidates with 1 at index $i")
-            //println(candidates)
             i++
         }
     }
@@ -76,20 +69,13 @@ fun findOxygenRating(binary: List<String>) : Int {
 fun findCarbonRating(binary: List<String>) : Int {
     var i = 0
     var candidates = binary.toMutableList()
-    //println(candidates)
     while (candidates.size > 1) {
         val binaryMap = candidates.groupingBy { it.elementAt(i) }.eachCount()
-        //println("Round $i:")
-        //println(binaryMap)
         if ((binaryMap['0']!! > binaryMap['1']!!)) {
             candidates = candidates.filter { it.elementAt(i) == '1' } as MutableList<String>
-            //println("Removing candidates with 0 at index $i")
-            //println(candidates)
             i++
         } else if (binaryMap['0']!! < binaryMap['1']!! || (binaryMap['0']!! == binaryMap['1']!!)) {
             candidates = candidates.filter { it.elementAt(i) == '0'} as MutableList<String>
-            //println("Removing candidates with 1 at index $i")
-            //println(candidates)
             i++
         }
     }
